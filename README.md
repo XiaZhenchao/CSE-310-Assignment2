@@ -6,5 +6,9 @@ In order to get the source port, source IP address, destination port, and destin
 The question is required to get the pieces of information of the first two transactions after the TCP connection is set up. Hence, these transactions are the packets right after the three handshake connections. After observing the data from the analysis_pcap_tcp.py file, I noticed that the length of the packets used for setting up the TCP connection is 0. And there are three different source ports in total. Hence, I only need to find the first two transactions in which the length is greater than 0 for different source ports, and there are six packets in total.
 ## A.c
 The question requires the total amount of data sent by the sender. These data include the TCP connection. Through the observation, the start transaction's flag is 0x002, which is 2 in decimal, and the end transaction's flag is 0x011, which is 17 in decimal for all different source ports. Hence, we only need to record the start time, the end time, and the amount of data to print all necessary information.
-## Part B
+## Part B.1
+The congestion window sizes is the amount of packets sent in one RTT times. I can get the RTT time by using the time when sender sends the packet substract the time when sender receives the packet. Then get the time of the start point in three congestion window size for different portnumber. Then make a counter record the amount of the data send when time is between the start point time and start point time+ rtt.
+
+## Part B.2
+
 instructions on how to run codes
